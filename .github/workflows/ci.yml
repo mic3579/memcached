@@ -11,13 +11,20 @@ jobs:
       run: |
         sudo apt-get update -y
         sudo apt-get install -y libevent-dev libseccomp-dev git libsasl2-dev
-    - name: Build
+        
+    - name: prepare building
       run: |
         gcc --version
         ./autogen.sh
         ./configure --enable-seccomp --enable-tls --enable-sasl --enable-sasl-pwdb
-        make -j
+        
     - name: Coderrect Scan
       uses: coderrect-inc/coderrect-github-action@v0.5
       with:
         buildCommand: "make -j"
+        exit0: true
+    
+    - name: build
+      run: |
+        make clean
+        make -j
