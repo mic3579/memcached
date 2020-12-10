@@ -23,7 +23,7 @@ jobs:
       with:
         buildCommand: "make -j"
         options: "-analyzeBinaries=memcached,memcached-debug"
-        exit0: false
+        exit0: true
     
     - name: build
       run: |
