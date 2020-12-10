@@ -22,7 +22,7 @@ jobs:
       uses: coderrect-inc/coderrect-github-action@v0.6
       with:
         buildCommand: "make -j"
-        options: "-t -analyzeBinaries=memcached"
+        options: "-analyzeBinaries=memcached,memcached-debug"
         exit0: true
     
     - name: build
