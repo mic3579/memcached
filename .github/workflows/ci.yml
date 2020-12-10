@@ -19,7 +19,7 @@ jobs:
         ./configure --enable-seccomp --enable-tls --enable-sasl --enable-sasl-pwdb
         
     - name: Coderrect Scan
-      uses: coderrect-inc/coderrect-github-action@v0.5
+      uses: coderrect-inc/coderrect-github-action@v0.6
       with:
         buildCommand: "make -j"
         options: "-t -analyzeBinaries=memcached"
